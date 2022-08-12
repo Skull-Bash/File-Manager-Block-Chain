@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cloudstorageverifier",
+  "private_key_id": "1c1ca45d95155feec7631cd03167a1187fc94dbd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCtvimx8QbNh5Hi\nMI+mtmmOW5lAkcWf89ljDaXPf/BXchR0vLObNcShjfOTkwQZy5k6lhl2ggpmmq/0\nFwFcFN/e66ruqnpBdXB0PaJd7iJIiBn6lpW8ykDdblU9ucnzIexPgT6y8M9FRRj3\njBCHp1LSjkqDWKZ7o7ete+3nzZm1SHik6ROAN/oB75z4OI5uWvU6lw0D2aWoRIlD\n1TXdlnZ+VoyDRXbp88cVwUqW6jetbX5IRG4w14K2AVTM12UZJENK8qHqF6Y5EvFv\n0OSM28NKa4kspB9Q58PruPv/DOCYG3hWHsYWL9Q31p269UQH3PdE8OlB5wypWtzP\n6Hf9krZZAgMBAAECggEABa8clRf+gCXaqwH/XnIpoVZCJ6au/6I/7wYox0Mh+bmC\n/0GXKRh6uUr/MUlinZIXqruBmvkzz8uh2wQsGkVgx5aeEZay+cZBaoQgIOY5W3Y4\n3LCXRO/xpTP/lOobYqef2Oqwl9ES58BNAtvOKDEVH6Ea3fVMOs+chnN/US3q73oE\nl/BUl4yEQHPHb49gF8bqZFtos0zTnBRVqrXMcB+1qwTbqKBR/NrgHqO512HrxLwf\nZyjmDX0hig5jUS0Py0E5Jv2Qw3bmQhyiqsW1GICKoxdaPTrD2XsiQU5u49mPSyTj\nY0vI8V0+7QlJIrV6TwIPySJMR2MU3nsh65gFvHx7wwKBgQDjCAdTUlCgL9BJCa/u\nKh0fP4/JBn21Hu/eVX/O7bevnbVD1rWBfGLnZzGqOoIMKRvymf2TjT4p7iK2Agjg\neYrebG/VDBdiHNupOFecw8M/T4MtC3yONpp77j4j/LPOd9fLNYsjTtum7Mx6CoT7\nELkHa+apJJ7MlQhdFv5ahd1n6wKBgQDD6XdPBBFPgMfk4e7amFnjTrtH1PqWHZKF\nRl5drfNTQf9c8NXGLYLNBUHVQWQm7YrwzHSgDAub8NNpbRQ5gnhfA1HeeaA/o1Rh\n4qsbF3jXZEC1ou9i58jRko+yBq98ZpiBjrWHuS8WqOHvJ2aDFOgF1XYZTqaeXVrh\nyEVX+PctywKBgDxs754yo3jvIO2/oU6vcM7XWQq1KpIhaNBxSzIlPSWFwTAMHoUX\nOS/D3IklR2W7L1ATwlUaW7hHRH/S7M/qKZbnn6BBtpuLeL+CWndD91yLait8CivD\nxrxDfdCQOr8yUIIqfxznqTi1f/rff+Ne4RBjnKHaOFXVOMOmEg6/4Fz/AoGALnml\nBwalAKJBSWfbnNnFgSn9PaYlqBTt3FX8LucEMT0X0jmDzRagz/guTOPNWXrCmis2\ng304B89Sp9DrmlT8LzX/ZvKddFtPukTmaG/iB97NhwlXFrR7rFPDaO0zFiTUiu+K\n2t6wcASyTGShafk8rZ2c/ZXt6uWkmKlE4gC6yo8CgYAW+QzVqVF3q4Lt1S7Io7rD\nfHUHP2sE/cu6dKKlIhWCur/d4vKeI/pXydPzpIKzZ7ZJFT08+XV2yozB6DRGi1gS\ngArZedkPmNkWVn7Un4OVv67lbZCY/lURI85ltDt9KZiMnERGIss2rSIBd2XuB4VS\njFQScLt496XvGB9m4Q25mQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-7bqcw@cloudstorageverifier.iam.gserviceaccount.com",
+  "client_id": "100650895714160844230",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-7bqcw%40cloudstorageverifier.iam.gserviceaccount.com"
+}

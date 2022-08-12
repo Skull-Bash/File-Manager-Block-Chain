@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+    <meta charset="UTF-8">
+    <title>Activity Logs</title>
+</head>
+<body>
+<!--<nav-->
+<!--  class="relative w-full flex flex-wrap items-center justify-between py-3 bg-gray-900 text-gray-200 shadow-lg navbar navbar-expand-lg navbar-light"-->
+<!--&gt;-->
+<!--  <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">-->
+<!--    <button-->
+<!--      class="navbar-toggler text-gray-200 border-0 hover:shadow-none hover:no-underline py-2 px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline"-->
+<!--      type="button"-->
+<!--      data-bs-toggle="collapse"-->
+<!--      data-bs-target="#navbarSupportedContent1"-->
+<!--      aria-controls="navbarSupportedContent"-->
+<!--      aria-expanded="false"-->
+<!--      aria-label="Toggle navigation"-->
+<!--    >-->
+<!--      <svg-->
+<!--        aria-hidden="true"-->
+<!--        focusable="false"-->
+<!--        data-prefix="fas"-->
+<!--        data-icon="bars"-->
+<!--        class="w-6"-->
+<!--        role="img"-->
+<!--        xmlns="http://www.w3.org/2000/svg"-->
+<!--        viewBox="0 0 448 512"-->
+<!--      >-->
+<!--        <path-->
+<!--          fill="currentColor"-->
+<!--          d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"-->
+<!--        ></path>-->
+<!--      </svg>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent1">-->
+<!--      <a class="text-xl text-white pr-2 font-semibold" href="/logout">Cloud Storage Verifier Using Blockchain</a>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<nav
+  class="relative w-full flex flex-wrap items-center justify-between py-2 bg-gray-900 text-gray-200 shadow-lg navbar navbar-expand-lg navbar-light"
+>
+  <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+      <a class="text-xl text-white pr-2 font-semibold" href="/logout">Cloud Verifier</a>
+      <!-- Left links -->
+      <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
+        <li class="nav-item p-2">
+          <a
+            class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-auto"
+            href="/FileManager"
+            >File Manager</a
+          >
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link text-white" href="/ActivityLog">Activity Log</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <!-- Right elements -->
+  </div>
+</nav>
+    <div class="flex flex-col">
+      <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+          <div class="overflow-hidden">
+            <table class="min-w-full text-center">
+              <thead class="border-b bg-gray-800">
+                <tr>
+                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                    #
+                  </th>
+                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                    File Name
+                  </th>
+                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                    User Id
+                  </th>
+                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                    Log
+                  </th>
+                    <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                    Time Stamp
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% set i = namespace(value=0) %}
+                  {% for file in values %}
+                  {% set i.value = i.value + 1 %}
+                    <tr class="bg-white border-b">
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ i.value }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ file[0] }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ file[1] }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ file[2] }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ file[3] }}</td>
+                    </tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

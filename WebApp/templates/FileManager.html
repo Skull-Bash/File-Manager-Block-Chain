@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+    <meta charset="UTF-8">
+    <title>FileManager</title>
+</head>
+<body>
+<nav
+  class="relative w-full flex flex-wrap items-center justify-between py-2 bg-gray-900 text-gray-200 shadow-lg navbar navbar-expand-lg navbar-light"
+>
+  <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+      <a class="text-xl text-white pr-2 font-semibold" href="/logout">Cloud Verifier</a>
+      <!-- Left links -->
+      <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
+        <li class="nav-item p-2">
+          <a class="nav-link text-white" href="/FileManager">File Manager</a>
+        </li>
+        <li class="nav-item p-2">
+          <a
+            class="nav-link text-white opacity-60 hover:opacity-80 focus:opacity-80 p-auto"
+            href="/ActivityLog"
+            >Activity Log</a
+          >
+        </li>
+      </ul>
+    <!-- Right elements -->
+          <div class="flex items-center relative">
+      <!-- Right -->
+        <div class="flex space-x-2 justify-center">
+          <div>
+
+              <form style="display:{{input}};" id="inputField" action = "/upload_file" method = "post" role="form" enctype="multipart/form-data">
+
+             <button type="submit" class="inline-block px-6 pt-2.5 pb-2 bg-blue-600 text-white font-medium text-xs leading-normal uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out flex align-center">
+                 <input type='file' name="file" />
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+              <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+            </svg>
+              &nbsp Upload File
+            </button>
+           </form>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</nav>
+
+
+ {% block content %}
+    {% for message in get_flashed_messages() %}
+    <div id="successMessage" class="alert alert-success alert-dismissible fade show m-2" role="alert">
+      {{message}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+    </div>
+    {%endfor%}
+    {% endblock %}
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+          <div class="overflow-hidden">
+            <table class="min-w-full text-center">
+              <thead class="border-b bg-gray-800">
+                <tr>
+                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                    #
+                  </th>
+                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                    File Name
+                  </th>
+                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                    Type
+                  </th>
+                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                    Open File
+                  </th>
+                    <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                    Delete
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% set i = namespace(value=0) %}
+                  {% for file in values %}
+                  {% set i.value = i.value + 1 %}
+                    <tr class="bg-white border-b">
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ i.value }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ file[0] }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ file[1] }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          <a href="/download/{{i.value}}">
+                              <i class="fa-solid fa-link"></i>
+                          </a>
+                      </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                           <a href="/delete/{{ file[0] }}">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                          </a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>
